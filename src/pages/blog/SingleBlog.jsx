@@ -31,8 +31,10 @@ const SingleBlog = () => {
     }
   };
   useEffect(() => {
-    fetchBlog();
-  }, []);
+    if (id) {
+      fetchBlog();
+    }
+  }, [id]);
 
   return (
     <Layout>
