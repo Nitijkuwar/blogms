@@ -2,29 +2,34 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Card = ({ blog }) => {
-  // Return nothing if blog or blog._id is missing
-  if (!blog || !blog._id) return null;
-
   return (
-    <Link to={`/blog/${blog._id}`}>
-      <div className="flex flex-wrap w-[95%] m-auto px-4 py-6 ">
-        <div className="w-[300px] rounded overflow-hidden shadow-lg bg-white">
-          <img
-            className="w-full h-40 object-cover"
-            src={blog.imageUrl} //
-            alt={blog.title}
-          />
-          <div className="px-4 py-3">
-            <h2 className="font-bold text-xl mb-2">{blog.title}</h2>
-            <p className="inline-block text-sm font-semibold text-gray-700">
-              {blog.description || "No description available."}
-            </p>
-          </div>
-          <div className="px-4 py-2">
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700">
-              {blog.category}
-            </span>
-          </div>
+    <Link
+      to={`/blog/${blog._id}`}
+      className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2 mt-15"
+    >
+      <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
+        {/* Image */}
+        <img
+          src={blog.imageUrl}
+          alt={blog.title}
+          className="w-full h-48 sm:h-56 md:h-64 object-cover"
+        />
+
+        {/* Content */}
+        <div className="p-4 flex-1 flex flex-col">
+          <h2 className="font-bold text-xl text-gray-900 mb-2 line-clamp-2">
+            {blog.title}
+          </h2>
+          <p className="text-gray-700 text-sm flex-grow line-clamp-3">
+            {blog.description}
+          </p>
+        </div>
+
+        {/* Category */}
+        <div className="px-4 pb-4">
+          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
+            {blog.category}
+          </span>
         </div>
       </div>
     </Link>
