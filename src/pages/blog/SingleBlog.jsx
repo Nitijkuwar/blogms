@@ -25,22 +25,14 @@ const SingleBlog = () => {
     }
   };
   const fetchBlog = async () => {
-    try {
-      const response = await axios.get(`${baseURL}/blog/${id}`);
-      if (response.status === 200) {
-        setBlog(response.data.data);
-      }
-    } catch (error) {
-      console.error("Failed to fetch blog:", error);
-      alert("Blog not found or server error");
+    const response = await axios.get(`${baseURL}/blog/${id}`);
+    if (response.status === 200) {
+      setBlog(response.data.data);
     }
   };
-
   useEffect(() => {
-    if (id) {
-      fetchBlog();
-    }
-  }, [id]);
+    fetchBlog();
+  }, []);
 
   return (
     <Layout>
