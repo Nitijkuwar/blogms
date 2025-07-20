@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 const Card = ({ blog }) => {
-  const [expanded, setExpanded] = useState(false);
-
   return (
     <Link to={`/blog/${blog._id}`}>
       <div className="flex flex-wrap w-[95%] m-auto px-4 py-6 ">
