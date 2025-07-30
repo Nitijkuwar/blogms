@@ -7,6 +7,7 @@ import AddBlog from "./pages/blog/AddBlog";
 import EditBlog from "./pages/blog/EditBlog";
 import SingleBlog from "./pages/blog/SingleBlog";
 import Parent from "./pages/useCallback/Parent";
+import Hook from "./pages/hookPages/Hook";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/blog/edit/:id" element={<EditBlog />} />
         <Route path="/blog/:id" element={<SingleBlog />} />
         <Route path="/useCallback" element={<Parent />} />
+        <Route path="/customhook" element={<Hook />} />
       </Routes>
     </BrowserRouter>
   );
