@@ -6,6 +6,7 @@ import Login from "./pages/auth/Login";
 import AddBlog from "./pages/blog/AddBlog";
 import EditBlog from "./pages/blog/EditBlog";
 import SingleBlog from "./pages/blog/SingleBlog";
+import Parent from "./pages/useCallback/Parent";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/blog/add" element={<AddBlog />} />
         <Route path="/blog/edit/:id" element={<EditBlog />} />
         <Route path="/blog/:id" element={<SingleBlog />} />
+        <Route path="/useCallback" element={<Parent />} />
       </Routes>
     </BrowserRouter>
   );
